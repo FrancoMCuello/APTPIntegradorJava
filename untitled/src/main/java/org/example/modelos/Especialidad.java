@@ -10,7 +10,7 @@ public class Especialidad {
     private long id;
 
     private String nombre;
-
+    
     @ManyToMany(mappedBy = "especialidades")
     private List<Tecnico> tecnicos;
 }
