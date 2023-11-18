@@ -3,14 +3,14 @@ package org.example.modelos;
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity
+//@Entity
 public class Operador {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+   // @Id
+   // @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nombre;
 
-    @OneToMany(mappedBy = "operador", cascade = CascadeType.ALL)
+   // @OneToMany(mappedBy = "operador", cascade = CascadeType.ALL)
     private List<Incidente> incidentes;
 }
