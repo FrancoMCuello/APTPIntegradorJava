@@ -9,7 +9,6 @@ public class App {
             Transaction transaction = session.beginTransaction();
 
             // Aca irian las acciones
-
             transaction.commit();
         } catch (Exception e) {
             e.printStackTrace();
