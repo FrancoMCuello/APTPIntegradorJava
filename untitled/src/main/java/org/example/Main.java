@@ -1,36 +1,40 @@
 package org.example;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.integrador.hibernateConfig.HibernateConfig;
+import org.example.modelos.Cliente;
+import javax.persistence.Embeddable;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
-
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
 public class Main {
-    public static void main(String[] args) {
-        try (Session session = org.integrador.hibernateConfig.HibernateConfig.getSessionFactory().openSession()) {
-            Transaction transaction = session.beginTransaction();
 
+    public static EntityManager getEntityManager() {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("GestionIncidentesPU");
+
+        EntityManager em = emf.createEntityManager();
+
+        return em;
+    }
+    public static void main(String[] args) {
+
+        EntityManager em = getEntityManager();
+
+        try {
+            em.getTransaction().begin();
+
+            Cliente cliente1 = new Cliente(1L,"Sabrina","1234567");
+            em.persist(cliente1);
             // Aca irian las acciones
 
-            transaction.commit();
+            em.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
         }
+        finally {
 
-
-public class App {
-    public static void main(String[] args) {
-        try (Session session = HibernateConfig.getSessionFactory().openSession()) {
-            Transaction transaction = session.beginTransaction();
-
-            // Aca irian las acciones
-            transaction.commit();
-        } catch (Exception e) {
-            e.printStackTrace();
- main
         }
     }
+}
+
+

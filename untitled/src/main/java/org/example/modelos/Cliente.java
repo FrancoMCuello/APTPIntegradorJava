@@ -1,13 +1,16 @@
 package org.example.modelos;
 
+import lombok.Getter;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
-//@Entity
+@Getter
+@Entity
 public class Cliente {
-    // @Id
-    // @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String razonSocial;
