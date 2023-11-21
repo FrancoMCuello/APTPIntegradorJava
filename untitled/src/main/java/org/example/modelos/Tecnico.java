@@ -1,13 +1,16 @@
 package org.example.modelos;
 
+import lombok.Getter;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
-//@Entity
+@Getter
+@Entity
 public class Tecnico {
-    // @Id
-    // @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nombre;
@@ -25,13 +28,13 @@ public class Tecnico {
     private String contacto;
 
     @ManyToMany
-     @JoinTable(
+    @JoinTable(
     name = "tecnico_especialidad",
     joinColumns = @JoinColumn(name = "tecnico_id"),
     inverseJoinColumns = @JoinColumn(name = "especialidad_id"))
     private List<Especialidad> especialidades;
 
-    //@OneToMany(mappedBy = "tecnicoAsignado", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "tecnicoAsignado", cascade = CascadeType.ALL)
     private List<Incidente> incidentesAsignados;
 
     public Long getId() {

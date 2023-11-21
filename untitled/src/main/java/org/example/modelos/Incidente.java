@@ -1,12 +1,15 @@
 package org.example.modelos;
 
+import lombok.Getter;
+
 import javax.persistence.*;
 import java.util.Date;
 
+@Getter
 @Entity
 public class Incidente {
-    // @Id
-    // @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String tipoProblema;
@@ -27,13 +30,9 @@ public class Incidente {
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
-    //  @ManyToOne
-    // @JoinColumn(name = "tecnico_id")
+    @ManyToOne
+    @JoinColumn(name = "tecnico_id")
     private Tecnico tecnicoAsignado;
-
-    public Long getId() {
-        return id;
-    }
 
     public Incidente(Long id, String tipoProblema, String descripcion, Date tiempoResolucion, org.example.modelos.Incidente.Estado estadoIncidente, Cliente cliente, Tecnico tecnicoAsignado, Operador operador) {
         this.id = id;
@@ -108,6 +107,5 @@ public class Incidente {
 
     @ManyToOne
     @JoinColumn(name = "operador_id")
-
     private Operador operador;
 }
