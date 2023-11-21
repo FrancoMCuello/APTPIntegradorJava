@@ -8,11 +8,11 @@ public interface TecnicoDAO {
 
     public void agregarTecnico(Tecnico tecnico);
 
-    public void actualizarTecnico(Long id);
+    public void actualizarTecnico(Tecnico tecnico);
 
-    public void eliminarTecnico(Long id);
+    public void eliminarTecnico(Tecnico tecnico);
 
-    public void buscarTecnico(Long id);
+    public Tecnico buscarTecnico(int id);
 
     public List<Tecnico> obtenerTodosLosTecnicos();
 
