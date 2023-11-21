@@ -1,7 +1,8 @@
 package org.example;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
+import org.example.modelos.Cliente;
+import javax.persistence.Embeddable;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -22,6 +23,8 @@ public class Main {
         try {
             em.getTransaction().begin();
 
+            Cliente cliente1 = new Cliente(1L,"Sabrina","1234567");
+            em.persist(cliente1);
             // Aca irian las acciones
 
             em.getTransaction().commit();
