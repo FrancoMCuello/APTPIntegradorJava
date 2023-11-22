@@ -10,7 +10,7 @@ import java.util.Date;
 public class Incidente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     private String tipoProblema;
 
@@ -34,7 +34,7 @@ public class Incidente {
     @JoinColumn(name = "tecnico_id")
     private Tecnico tecnicoAsignado;
 
-    public Incidente(Long id, String tipoProblema, String descripcion, Date tiempoResolucion, org.example.modelos.Incidente.Estado estadoIncidente, Cliente cliente, Tecnico tecnicoAsignado, Operador operador) {
+    public Incidente(Integer id, String tipoProblema, String descripcion, Date tiempoResolucion, org.example.modelos.Incidente.Estado estadoIncidente, Cliente cliente, Tecnico tecnicoAsignado, Operador operador) {
         this.id = id;
         this.tipoProblema = tipoProblema;
         this.descripcion = descripcion;
@@ -45,7 +45,7 @@ public class Incidente {
         this.operador = operador;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

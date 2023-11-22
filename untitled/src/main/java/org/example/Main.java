@@ -10,7 +10,7 @@ import javax.persistence.Persistence;
 public class Main {
 
     public static EntityManager getEntityManager() {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("GestionIncidentesPU");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("GestionIncidentes");
 
         EntityManager em = emf.createEntityManager();
 
@@ -23,13 +23,15 @@ public class Main {
         try {
             em.getTransaction().begin();
 
-            Cliente cliente1 = new Cliente(1L,"Sabrina","1234567");
+            Cliente cliente1 = new Cliente("Sabrina","1234567");
             em.persist(cliente1);
             // Aca irian las acciones
 
             em.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            em.close();
         }
 
     }

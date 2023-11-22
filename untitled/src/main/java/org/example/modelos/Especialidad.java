@@ -11,16 +11,16 @@ import java.util.List;
 public class Especialidad {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private int id;
 
     private String nombre;
 
-    public Especialidad(long id, String nombre) {
+    public Especialidad(int id, String nombre) {
         this.id = id;
         this.nombre = nombre;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

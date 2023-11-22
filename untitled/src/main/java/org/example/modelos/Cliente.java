@@ -11,21 +11,16 @@ import java.util.List;
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     private String razonSocial;
 
-    public Cliente(Long id, String razonSocial, String cuit) {
-        this.id = id;
+    public Cliente( String razonSocial, String cuit) {
         this.razonSocial = razonSocial;
         this.cuit = cuit;
     }
 
     private String cuit;
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public void setRazonSocial(String razonSocial) {
         this.razonSocial = razonSocial;

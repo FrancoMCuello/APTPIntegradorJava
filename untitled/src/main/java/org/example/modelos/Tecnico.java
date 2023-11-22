@@ -11,7 +11,7 @@ import java.util.List;
 public class Tecnico {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     private String nombre;
 
@@ -37,12 +37,8 @@ public class Tecnico {
     @OneToMany(mappedBy = "tecnicoAsignado", cascade = CascadeType.ALL)
     private List<Incidente> incidentesAsignados;
 
-    public Long getId() {
+    public int getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getNombre() {
@@ -77,8 +73,7 @@ public class Tecnico {
         this.incidentesAsignados = incidentesAsignados;
     }
 
-    public Tecnico(Long id, String nombre, String apellido, List<Especialidad> especialidades, String contacto) {
-        this.id = id;
+    public Tecnico(String nombre, String apellido, List<Especialidad> especialidades, String contacto) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.especialidades = especialidades;

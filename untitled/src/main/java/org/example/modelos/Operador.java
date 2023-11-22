@@ -12,23 +12,23 @@ public class Operador {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     private String nombre;
 
     private String apellido;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public Operador(Long id, String nombre, String apellido) {
-        this.id = id;
+    public Operador(String nombre, String apellido) {
+
         this.nombre = nombre;
         this.apellido = apellido;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
