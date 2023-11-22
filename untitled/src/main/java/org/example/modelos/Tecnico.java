@@ -78,8 +78,7 @@ public class Tecnico {
         this.incidentesAsignados = incidentesAsignados;
     }
 
-    public Tecnico(Long id, String nombre, String apellido, List<Especialidad> especialidades, String contacto) {
-        this.id = id;
+    public Tecnico( String nombre, String apellido, List<Especialidad> especialidades, String contacto) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.especialidades = especialidades;

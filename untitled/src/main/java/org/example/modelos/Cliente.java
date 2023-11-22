@@ -16,8 +16,7 @@ public class Cliente {
 
     private String razonSocial;
 
-    public Cliente(Long id, String razonSocial, String cuit) {
-        this.id = id;
+    public Cliente( String razonSocial, String cuit) {
         this.razonSocial = razonSocial;
         this.cuit = cuit;
     }

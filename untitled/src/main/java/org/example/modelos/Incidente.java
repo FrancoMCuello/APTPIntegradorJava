@@ -4,6 +4,7 @@ import lombok.Getter;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Entity
@@ -13,7 +14,9 @@ public class Incidente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String tipoProblema;
+    @Getter
+    @ManyToMany(mappedBy = "tipoProblema")
+    private List<TipoProblema> tipoProblema;
 
     private String descripcion;
 
@@ -36,8 +39,7 @@ public class Incidente {
     @JoinColumn(name = "tecnico_id")
     private Tecnico tecnicoAsignado;
 
-    public Incidente(Long id, String tipoProblema, String descripcion, org.example.modelos.Incidente.Estado estadoIncidente, Cliente cliente, Tecnico tecnicoAsignado) {
-        this.id = id;
+    public Incidente( List<TipoProblema> tipoProblema, String descripcion, org.example.modelos.Incidente.Estado estadoIncidente, Cliente cliente, Tecnico tecnicoAsignado) {
         this.tipoProblema = tipoProblema;
         this.descripcion = descripcion;
         //this.tiempoResolucion = tiempoResolucion;
@@ -50,20 +52,16 @@ public class Incidente {
         this.id = id;
     }
 
-    public String getTipoProblema() {
-        return tipoProblema;
-    }
-
-    public void setTipoProblema(String tipoProblema) {
-        this.tipoProblema = tipoProblema;
-    }
-
     public String getDescripcion() {
         return descripcion;
     }
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public void setTipoProblema(List<TipoProblema> tipoProblema) {
+        this.tipoProblema = tipoProblema;
     }
 
     public Date getTiempoResolucion() {
@@ -98,15 +96,4 @@ public class Incidente {
         this.tecnicoAsignado = tecnicoAsignado;
     }
 
-    public Operador getOperador() {
-        return operador;
-    }
-
-    public void setOperador(Operador operador) {
-        this.operador = operador;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "operador_id")
-    private Operador operador;
 }

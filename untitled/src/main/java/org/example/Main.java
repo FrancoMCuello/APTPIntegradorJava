@@ -1,10 +1,8 @@
 package org.example;
-import org.example.modelos.Especialidad;
-import org.example.modelos.Incidente;
-import org.example.modelos.Tecnico;
+import org.example.modelos.*;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.example.modelos.Cliente;
+
 import javax.persistence.Embeddable;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -13,6 +11,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Main {
@@ -31,24 +30,32 @@ public class Main {
         try {
             em.getTransaction().begin();
 
-            Cliente cliente1 = new Cliente(1L,"Sabrina","1234567");
+            Cliente cliente1 = new Cliente("Sabrina","1234567");
 
-            Especialidad especialidad1 = new Especialidad(1L, "especialidad1");
+            Especialidad especialidad1 = new Especialidad( "especialidad1");
             em.persist(especialidad1);
-            Especialidad especialidad2 = new Especialidad(2L, "especialidad2");
+            Especialidad especialidad2 = new Especialidad( "especialidad2");
             em.persist(especialidad2);
             List<Especialidad> especialidadesTecnico1 = new ArrayList<>();
             especialidadesTecnico1.add(especialidad1);
             especialidadesTecnico1.add(especialidad2);
 
-            Tecnico tecnico1 = new Tecnico(1L, "Carlos", "Gutierrez", especialidadesTecnico1, "MAIL");
+            Tecnico tecnico1 = new Tecnico( "Carlos", "Gutierrez", especialidadesTecnico1, "MAIL");
             em.persist(tecnico1);
 
-            Incidente incidente = new Incidente(1L, "no anda el wifi", "no se puede conectar al wifi", Incidente.Estado.PENDIENTE, cliente1, tecnico1);
-            em.persist(incidente);
+            TipoProblema tipoProblema1 = new TipoProblema("no anda el wifi", new Date(), new Date(1) );
+            em.persist(tipoProblema1);
+
+            Incidente incidente = new Incidente( List.of(tipoProblema1), "no se puede conectar al wifi", Incidente.Estado.PENDIENTE, cliente1, tecnico1);
 
             cliente1.setIncidentes(List.of(incidente));
             em.persist(cliente1);
+
+            incidente.setCliente(cliente1);
+            em.persist(incidente);
+
+            tipoProblema1.setIncidentes(List.of(incidente));
+            incidente.setTipoProblema(List.of(tipoProblema1));
             // Aca irian las acciones
 
             em.getTransaction().commit();
