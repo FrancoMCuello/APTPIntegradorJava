@@ -22,6 +22,13 @@ public class Cliente {
         this.cuit = cuit;
     }
 
+    public Cliente(Long id, String razonSocial, String cuit, List<Incidente> incidentes) {
+        this.id = id;
+        this.razonSocial = razonSocial;
+        this.cuit = cuit;
+        this.incidentes = incidentes;
+    }
+
     private String cuit;
 
     public void setId(Long id) {

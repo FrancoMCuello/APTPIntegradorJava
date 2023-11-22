@@ -27,6 +27,7 @@ public class Incidente {
     private boolean esComplejo;
 
     private int colchonHoras;
+
     @ManyToOne
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
@@ -35,15 +36,14 @@ public class Incidente {
     @JoinColumn(name = "tecnico_id")
     private Tecnico tecnicoAsignado;
 
-    public Incidente(Long id, String tipoProblema, String descripcion, Date tiempoResolucion, org.example.modelos.Incidente.Estado estadoIncidente, Cliente cliente, Tecnico tecnicoAsignado, Operador operador) {
+    public Incidente(Long id, String tipoProblema, String descripcion, org.example.modelos.Incidente.Estado estadoIncidente, Cliente cliente, Tecnico tecnicoAsignado) {
         this.id = id;
         this.tipoProblema = tipoProblema;
         this.descripcion = descripcion;
-        this.tiempoResolucion = tiempoResolucion;
+        //this.tiempoResolucion = tiempoResolucion;
         this.estadoIncidente = estadoIncidente;
         this.cliente = cliente;
         this.tecnicoAsignado = tecnicoAsignado;
-        this.operador = operador;
     }
 
     public void setId(Long id) {
