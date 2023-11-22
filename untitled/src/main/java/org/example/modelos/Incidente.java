@@ -7,6 +7,7 @@ import java.util.Date;
 
 @Getter
 @Entity
+@Table
 public class Incidente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

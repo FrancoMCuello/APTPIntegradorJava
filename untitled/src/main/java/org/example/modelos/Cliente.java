@@ -8,6 +8,7 @@ import java.util.List;
 
 @Getter
 @Entity
+@Table
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
