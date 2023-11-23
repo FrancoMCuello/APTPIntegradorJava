@@ -33,4 +33,9 @@ public class IncidenteDAOImp implements IncidenteDAO {
     public List<Incidente> obtenerTodosLosIncidentes() {
         return null;
     }
+
+    @Override
+    public void setEntityManager(EntityManager em) {
+        this.em = em;
+    }
 }
