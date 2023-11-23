@@ -12,9 +12,9 @@
         <properties>
             <!-- Configuración de la conexión a la base de datos -->
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/gestion_incidentes"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/gestionincidentes"/>
             <property name="javax.persistence.jdbc.user" value="root"/>
-            <property name="javax.persistence.jdbc.password" value="admin"/>
+            <property name="javax.persistence.jdbc.password" value="Franco.7jumio"/>
 
             <!-- Configuración de Hibernate -->
 <!--            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>-->
