@@ -1,15 +1,10 @@
 package org.example;
 import org.example.modelos.*;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
+import org.example.repositorios.Tecnico;
 
-import javax.persistence.Embeddable;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -31,6 +26,12 @@ public class Main {
             em.getTransaction().begin();
 
             Cliente cliente1 = new Cliente("Sabrina","1234567");
+
+            Servicio servicio1 = new Servicio("servicio1");
+            em.persist(servicio1);
+
+            cliente1.setServicio(List.of(servicio1));
+            servicio1.setClientes(List.of(cliente1));
 
             Especialidad especialidad1 = new Especialidad( "especialidad1");
             em.persist(especialidad1);

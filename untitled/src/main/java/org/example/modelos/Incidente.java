@@ -1,6 +1,7 @@
 package org.example.modelos;
 
 import lombok.Getter;
+import org.example.repositorios.Tecnico;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -15,7 +16,7 @@ public class Incidente {
     private Long id;
 
     @Getter
-    @ManyToMany(mappedBy = "tipoProblema")
+    @ManyToMany(mappedBy = "incidentes")
     private List<TipoProblema> tipoProblema;
 
     private String descripcion;

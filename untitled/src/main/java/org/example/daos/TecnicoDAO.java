@@ -1,6 +1,6 @@
 package org.example.daos;
 
-import org.example.modelos.Tecnico;
+import org.example.repositorios.Tecnico;
 
 import java.util.List;
 

@@ -16,7 +16,28 @@ public class Cliente {
 
     private String razonSocial;
 
-    public Cliente( String razonSocial, String cuit) {
+    @ManyToMany
+    @JoinTable(
+            name = "cliente_servicios",
+            joinColumns = @JoinColumn(name = "cliente_id"),
+            inverseJoinColumns = @JoinColumn(name = "servicio_id"))
+    private List<Servicio> servicios;
+
+    public List<Servicio> getServicio() {
+        return servicios;
+    }
+
+    public void setServicio(List<Servicio> servicios) {
+        this.servicios = servicios;
+    }
+
+    public Cliente(String razonSocial, String cuit, List<Servicio> servicios) {
+        this.razonSocial = razonSocial;
+        this.servicios = servicios;
+        this.cuit = cuit;
+    }
+
+    public Cliente(String razonSocial, String cuit) {
         this.razonSocial = razonSocial;
         this.cuit = cuit;
     }

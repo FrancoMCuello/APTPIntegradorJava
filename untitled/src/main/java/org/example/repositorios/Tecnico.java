@@ -1,6 +1,8 @@
-package org.example.modelos;
+package org.example.repositorios;
 
 import lombok.Getter;
+import org.example.modelos.Especialidad;
+import org.example.modelos.Incidente;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -84,4 +86,5 @@ public class Tecnico {
         this.especialidades = especialidades;
         this.contacto = contacto;
     }
+
 }
