@@ -96,5 +96,4 @@ public class Incidente {
     public void setTecnicoAsignado(Tecnico tecnicoAsignado) {
         this.tecnicoAsignado = tecnicoAsignado;
     }
-
 }
