@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1830109f-6c36-48f5-a197-4c9c1b95cdba" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/shelf/Uncommitted_changes_before_Checkout_at_18_11_2023_13_11__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/shelf/Uncommitted_changes_before_Checkout_at_18_11_2023_13_11__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/shelf/Uncommitted_changes_before_Checkout_at_18_11_2023_13_13__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/shelf/Uncommitted_changes_before_Checkout_at_18_11_2023_13_13__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,6 +32,9 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -46,7 +47,8 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;SegundaEntrega&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Franco/Desktop/repositorio/repositorio&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Franco/Desktop/Descarga/TPIntegrador/untitled/src/main/java/org/example/Main.java&quot;
   }
