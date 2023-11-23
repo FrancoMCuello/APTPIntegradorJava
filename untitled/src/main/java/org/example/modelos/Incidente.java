@@ -1,6 +1,7 @@
 package org.example.modelos;
 
 import lombok.Getter;
+import org.example.repositorios.Tecnico;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -21,51 +22,6 @@ public class Incidente {
     private String descripcion;
 
     private Date tiempoResolucion;
-
-    private Date fechaInicio;
-
-    public Long getId() {
-        return id;
-    }
-
-    public List<TipoProblema> getTipoProblema() {
-        return tipoProblema;
-    }
-
-    public Date getFechaInicio() {
-        return fechaInicio;
-    }
-
-    public void setFechaInicio(Date fechaInicio) {
-        this.fechaInicio = fechaInicio;
-    }
-
-    public Date getFechaResolucion() {
-        return fechaResolucion;
-    }
-
-    public void setFechaResolucion(Date fechaResolucion) {
-        this.fechaResolucion = fechaResolucion;
-    }
-
-    public boolean isEsComplejo() {
-        return esComplejo;
-    }
-
-    public void setEsComplejo(boolean esComplejo) {
-        this.esComplejo = esComplejo;
-    }
-
-    public int getColchonHoras() {
-        return colchonHoras;
-    }
-
-    public void setColchonHoras(int colchonHoras) {
-        this.colchonHoras = colchonHoras;
-    }
-
-    private Date fechaResolucion;
-
     public enum Estado {
         PENDIENTE,
         RESUELTO
@@ -140,5 +96,4 @@ public class Incidente {
     public void setTecnicoAsignado(Tecnico tecnicoAsignado) {
         this.tecnicoAsignado = tecnicoAsignado;
     }
-    
 }

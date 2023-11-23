@@ -12,6 +12,7 @@ import java.util.List;
 @Entity
 @Table
 public class Tecnico {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -32,9 +33,9 @@ public class Tecnico {
 
     @ManyToMany
     @JoinTable(
-    name = "tecnico_especialidad",
-    joinColumns = @JoinColumn(name = "tecnico_id"),
-    inverseJoinColumns = @JoinColumn(name = "especialidad_id"))
+            name = "tecnico_especialidad",
+            joinColumns = @JoinColumn(name = "tecnico_id"),
+            inverseJoinColumns = @JoinColumn(name = "especialidad_id"))
     private List<Especialidad> especialidades;
 
     @OneToMany(mappedBy = "tecnicoAsignado", cascade = CascadeType.ALL)
@@ -86,5 +87,4 @@ public class Tecnico {
         this.especialidades = especialidades;
         this.contacto = contacto;
     }
-
 }
