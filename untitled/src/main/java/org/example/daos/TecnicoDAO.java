@@ -1,7 +1,8 @@
 package org.example.daos;
 
-import org.example.repositorios.Tecnico;
+import org.example.modelos.Tecnico;
 
+import javax.persistence.EntityManager;
 import java.util.List;
 
 public interface TecnicoDAO {
@@ -15,5 +16,7 @@ public interface TecnicoDAO {
     public Tecnico buscarTecnico(int id);
 
     public List<Tecnico> obtenerTodosLosTecnicos();
+
+    public void setEntityManager(EntityManager em);
 
 }

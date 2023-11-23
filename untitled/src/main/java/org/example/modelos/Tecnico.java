@@ -1,4 +1,4 @@
-package org.example.repositorios;
+package org.example.modelos;
 
 import lombok.Getter;
 import org.example.modelos.Especialidad;

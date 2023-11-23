@@ -1,7 +1,6 @@
 package org.example.modelos;
 
 import lombok.Getter;
-import org.example.repositorios.Tecnico;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -81,6 +80,8 @@ public class Incidente {
         this.estadoIncidente = estadoIncidente;
     }
 
+
+
     public Cliente getCliente() {
         return cliente;
     }
@@ -94,6 +95,9 @@ public class Incidente {
     }
 
     public void setTecnicoAsignado(Tecnico tecnicoAsignado) {
+
         this.tecnicoAsignado = tecnicoAsignado;
     }
+
+
 }

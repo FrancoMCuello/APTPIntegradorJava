@@ -1,7 +1,6 @@
 package org.example.modelos;
 
 import lombok.Getter;
-import org.example.repositorios.Tecnico;
 
 import javax.persistence.*;
 import java.util.List;

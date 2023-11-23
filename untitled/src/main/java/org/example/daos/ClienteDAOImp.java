@@ -33,4 +33,9 @@ public class ClienteDAOImp implements ClienteDAO {
     public List<Cliente> obtenerTodosLosCliente() {
         return null;
     }
+
+    @Override
+    public void setEntityManager(EntityManager em) {
+        this.em = em;
+    }
 }
