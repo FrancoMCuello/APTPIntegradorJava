@@ -1,6 +1,6 @@
 package org.example;
 import org.example.modelos.*;
-import org.example.repositorios.Tecnico;
+import org.example.modelos.Tecnico;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

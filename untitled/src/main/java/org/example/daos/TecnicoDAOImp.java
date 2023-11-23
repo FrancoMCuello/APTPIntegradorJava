@@ -1,6 +1,7 @@
 package org.example.daos;
 
-import org.example.repositorios.Tecnico;
+import org.example.modelos.Incidente;
+import org.example.modelos.Tecnico;
 
 import javax.persistence.EntityManager;
 import java.util.List;
