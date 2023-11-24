@@ -6,21 +6,18 @@ import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
 
+@Getter
+@Setter
 @Entity
 @Table
 public class Especialidad {
-    @Getter
-    @Setter
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Getter
-    @Setter
     private String nombre;
 
-    @Getter
-    @Setter
     @ManyToMany(mappedBy = "especialidades")
     private List<Tecnico> tecnicos;
 

@@ -1,12 +1,13 @@
 package org.example.modelos;
 
-import lombok.Getter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
 @Getter
+@Setter
 @Entity
 @Table
 public class TipoProblema {
@@ -16,29 +17,24 @@ public class TipoProblema {
 
     private String tipoProblema;
 
-    public TipoProblema(String tipoProblema) {
-        this.tipoProblema = tipoProblema;
-    }
+    private Date tiempoEstimado;
 
-    public void setIncidentes(List<Incidente> incidentes) {
-        this.incidentes = incidentes;
-    }
+    private Date tiempoMaximo;
+
+    @ManyToMany(mappedBy = "tipoProblema")
+    private List<Incidente> incidentes;
 
     public TipoProblema() {
     }
 
-    @Getter
-    @ManyToMany(mappedBy = "tipoProblema")
-    private List<Incidente> incidentes;
+    public TipoProblema(String tipoProblema) {
+        this.tipoProblema = tipoProblema;
+    }
 
     public TipoProblema(String tipoProblema, Date tiempoEstimado, Date tiempoMaximo) {
         this.tipoProblema = tipoProblema;
         this.tiempoEstimado = tiempoEstimado;
         this.tiempoMaximo = tiempoMaximo;
     }
-
-    private Date tiempoEstimado;
-
-    private Date tiempoMaximo;
 
 }

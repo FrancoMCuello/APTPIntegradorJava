@@ -16,7 +16,7 @@ public class EspecialidadService {
                 return em.find(Especialidad.class, idEspecialidad);
             } finally {
                 em.getTransaction().commit();
-                em.close();
+//                em.close();
             }
 
     }

@@ -5,6 +5,7 @@ import org.example.daos.IncidenteDAOImp;
 import org.example.daos.TecnicoDAOImp;
 import org.example.modelos.Tecnico;
 import org.example.repositorios.IncidenteRepository;
+import org.example.repositorios.TecnicoRepository;
 import org.example.service.EspecialidadService;
 import org.example.service.IncidenteService;
 import org.example.service.RRHHService;
@@ -14,12 +15,24 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.util.List;
-
+import java.util.logging.ConsoleHandler;
+import java.util.logging.Handler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Main {
 
-
     public static void main(String[] args) throws Exception {
+
+        Logger hibernateLogger = Logger.getLogger("org.hibernate");
+        hibernateLogger.setLevel(Level.OFF);
+
+        // También puedes desactivar los manejadores de consola si no deseas ningún mensaje
+        for (Handler handler : hibernateLogger.getHandlers()) {
+            if (handler instanceof ConsoleHandler) {
+                hibernateLogger.removeHandler(handler);
+            }
+        }
         // Configuración de la base de datos
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("GestionIncidentesPU");
         EntityManager em = emf.createEntityManager();
@@ -36,6 +49,8 @@ public class Main {
 
         IncidenteRepository incidenteRepository = new IncidenteRepository();
 
+        TecnicoRepository tecnicoRepository = new TecnicoRepository();
+
         TecnicoService tecnicoService = new TecnicoService(incidenteDAO);
 
         IncidenteService incidenteService = new IncidenteService();
@@ -43,8 +58,6 @@ public class Main {
         EspecialidadService especialidadService = new EspecialidadService();
 
         RRHHService RRHHService = new RRHHService(incidenteService, tecnicoDAO);
-
-        Tecnico tecnico = new Tecnico("Jorge", "Lopez", List.of(especialidadService.obtenerEspecialidadPorID(1L)),"MAIL");
 
         // Crear instancias de entidades
 //        Especialidad especialidad1 = new Especialidad("Redes");
@@ -95,22 +108,21 @@ public class Main {
 //
 //        em.getTransaction().commit();
 
-//        RRHHService.generarReporteDiario();
+        RRHHService.generarReporteDiario();
 
-//        System.out.println(em.find(Especialidad.class, 1L).getTecnicos());
         // Cierre de recursos
         em.close();
         emf.close();
 
-//        Tecnico tecnicoServiceTecnicoConMasIncidentesResueltosEnUltimosNDias = tecnicoService.getTecnicoConMasIncidentesResueltosEnUltimosNDias(5);
-//
-//        Tecnico tecnicoConMasIncidentesPorEspecialidad = tecnicoService.getTecnicoConMasIncidentesResueltosEnEspecialidadYUltimosNDias(1L, 10);
-//
-//        Tecnico tecnicoConResolucionMasRapida = tecnicoService.getTecnicoConResolucionMasRapida();
-//
-//        System.out.println(tecnicoConMasIncidentesPorEspecialidad.getNombre());
-//        System.out.println(tecnicoServiceTecnicoConMasIncidentesResueltosEnUltimosNDias.getNombre());
-//        System.out.println(tecnicoConResolucionMasRapida.getNombre());
+        Tecnico tecnicoServiceTecnicoConMasIncidentesResueltosEnUltimosNDias = tecnicoService.getTecnicoConMasIncidentesResueltosEnUltimosNDias(5);
+
+        Tecnico tecnicoConMasIncidentesPorEspecialidad = tecnicoService.getTecnicoConMasIncidentesResueltosEnEspecialidadYUltimosNDias(1L, 10);
+
+        Tecnico tecnicoConResolucionMasRapida = tecnicoService.getTecnicoConResolucionMasRapida();
+
+        System.out.println(tecnicoConMasIncidentesPorEspecialidad.getNombre());
+        System.out.println(tecnicoServiceTecnicoConMasIncidentesResueltosEnUltimosNDias.getNombre());
+        System.out.println(tecnicoConResolucionMasRapida.getNombre());
 
 
 
