@@ -5,14 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="160cfe1b-5aba-482f-9a6f-0b79727ef041" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/service/TecnicoRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/modelos/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/modelos/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/daos/ClienteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/daos/ClienteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/daos/ClienteDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/daos/ClienteDAOImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/daos/IncidenteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/daos/IncidenteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/daos/IncidenteDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/daos/IncidenteDAOImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/daos/TecnicoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/daos/TecnicoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/daos/TecnicoDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/daos/TecnicoDAOImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/modelos/Especialidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/modelos/Especialidad.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/modelos/Incidente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/modelos/Incidente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/modelos/Operador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/modelos/Operador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repositorios/Tecnico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repositorios/Tecnico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repositorios/Tecnico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/modelos/Tecnico.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +52,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "git-widget-placeholder": "Merging develop"
+    "git-widget-placeholder": "develop",
+    "last_opened_file_path": "C:/Users/Franco/Desktop/repositorio/repositorio"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -72,7 +77,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1830109f-6c36-48f5-a197-4c9c1b95cdba" name="Changes" comment="" />
+      <changelist id="160cfe1b-5aba-482f-9a6f-0b79727ef041" name="Changes" comment="" />
       <created>1700314368783</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
