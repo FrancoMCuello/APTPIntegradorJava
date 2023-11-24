@@ -11,7 +11,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import static org.example.service.IncidenteService.obtenerTodosLosIncidentes;
-import static org.example.service.EspecialidadServicio.obtenerEspecialidadPorID;
+import static org.example.service.EspecialidadService.obtenerEspecialidadPorID;
 
 public class TecnicoService {
 

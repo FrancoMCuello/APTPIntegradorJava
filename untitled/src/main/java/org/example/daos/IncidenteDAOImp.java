@@ -26,7 +26,7 @@ public class IncidenteDAOImp implements IncidenteDAO {
     }
 
     @Override
-    public Incidente obtenerIncidente(int id) {
+    public Incidente obtenerIncidente(Long id) {
       return em.find(Incidente.class, id);
 // Si find devuelve null, podrías lanzar una excepción o manejar la situación según tus requisitos.
     }

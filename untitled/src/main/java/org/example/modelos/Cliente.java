@@ -1,26 +1,29 @@
 package org.example.modelos;
 
-import lombok.Getter;
+import lombok.*;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
 
-@Getter
 @Entity
 @Table
 public class Cliente {
+    @Getter
+    @Setter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Getter
+    @Setter
     private String razonSocial;
 
-    public Cliente() {
-    }
-
+    @Getter
+    @Setter
     private String cuit;
 
+    @Getter
+    @Setter
     @ManyToMany
     @JoinTable(
             name = "cliente_servicios",
@@ -28,51 +31,16 @@ public class Cliente {
             inverseJoinColumns = @JoinColumn(name = "servicio_id"))
     private List<Servicio> servicios;
 
-    public List<Servicio> getServicio() {
-        return servicios;
-    }
+    @Getter
+    @Setter
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
+    private List<Incidente> incidentes;
 
-    public void setServicio(List<Servicio> servicios) {
-        this.servicios = servicios;
-    }
-
+    public Cliente(){}
     public Cliente(String razonSocial, String cuit, List<Servicio> servicios) {
         this.razonSocial = razonSocial;
         this.servicios = servicios;
         this.cuit = cuit;
     }
-
-    public Cliente(String razonSocial, String cuit) {
-        this.razonSocial = razonSocial;
-        this.cuit = cuit;
-    }
-
-    public Cliente(Long id, String razonSocial, String cuit, List<Incidente> incidentes) {
-        this.id = id;
-        this.razonSocial = razonSocial;
-        this.cuit = cuit;
-        this.incidentes = incidentes;
-    }
-
-
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setRazonSocial(String razonSocial) {
-        this.razonSocial = razonSocial;
-    }
-
-    public void setCuit(String cuit) {
-        this.cuit = cuit;
-    }
-
-    public void setIncidentes(List<Incidente> incidentes) {
-        this.incidentes = incidentes;
-    }
-
-    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
-    private List<Incidente> incidentes;
 }
 

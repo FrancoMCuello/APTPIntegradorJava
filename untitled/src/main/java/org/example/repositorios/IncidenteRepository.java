@@ -1,71 +1,71 @@
 package org.example.repositorios;
 
-import org.example.daos.TecnicoDAO;
+import org.example.daos.IncidenteDAO;
 import org.example.factory.DAOFactory;
-import org.example.modelos.Tecnico;
+import org.example.modelos.Incidente;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-public class TecnicoRepository {
+public class IncidenteRepository {
     private EntityManagerFactory emf = Persistence.createEntityManagerFactory("GestionIncidentesPU");
-    private TecnicoDAO tecnicoDAO;
+    private IncidenteDAO incidenteDAO;
 
-    public TecnicoRepository(){
-        this.tecnicoDAO = DAOFactory.getTecnicoDAO();
+    public IncidenteRepository(){
+        this.incidenteDAO = DAOFactory.getIncidenteDAO();
     }
 
     private EntityManager obtenerEntityManagerConfigurado() {
 
         EntityManager em = emf.createEntityManager();
 
-        tecnicoDAO.setEntityManager(em);
+        incidenteDAO.setEntityManager(em);
 
         return em;
     }
 
-    public void add (Tecnico tecnico) throws Exception {
+    public void add(Incidente incidente) throws Exception {
         EntityManager em = obtenerEntityManagerConfigurado();
 
         em.getTransaction().begin();
 
-        tecnicoDAO.agregarTecnico(tecnico);
+        incidenteDAO.agregarIncidente(incidente);
 
         em.getTransaction().commit();
         em.close();
 
     }
 
-    public void remove(Tecnico tecnico) throws Exception {
+    public void remove(Incidente incidente) throws Exception {
         EntityManager em = obtenerEntityManagerConfigurado();
 
         em.getTransaction().begin();
 
-        tecnicoDAO.eliminarTecnico(tecnico);
+        incidenteDAO.eliminarIncidente(incidente);
 
         em.getTransaction().commit();
         em.close();
     }
 
-    public Tecnico get(Long id) throws Exception {
+    public Incidente get(Long id) throws Exception {
         EntityManager em = obtenerEntityManagerConfigurado();
 
         em.getTransaction().begin();
 
-        Tecnico tecnico = tecnicoDAO.buscarTecnico(id);
+        Incidente incidente = incidenteDAO.obtenerIncidente(id);
 
         em.getTransaction().commit();
         em.close();
-        return tecnico;
+        return incidente;
     }
 
-    public void update(Tecnico tecnico) throws Exception {
+    public void update(Incidente incidente) throws Exception {
         EntityManager em = obtenerEntityManagerConfigurado();
 
         em.getTransaction().begin();
 
-        tecnicoDAO.actualizarTecnico(tecnico);
+        incidenteDAO.modificarIncidente(incidente);
 
         em.getTransaction().commit();
         em.close();

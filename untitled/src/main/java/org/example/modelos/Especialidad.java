@@ -1,42 +1,35 @@
 package org.example.modelos;
 
-import lombok.Getter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
 
-@Getter
 @Entity
 @Table
 public class Especialidad {
+    @Getter
+    @Setter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Getter
+    @Setter
+    private String nombre;
+
+    @Getter
+    @Setter
+    @ManyToMany(mappedBy = "especialidades")
+    private List<Tecnico> tecnicos;
+
     public Especialidad() {
     }
-
-    private String nombre;
 
     public Especialidad(String nombre) {
         this.nombre = nombre;
     }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setTecnicos(List<Tecnico> tecnicos) {
-        this.tecnicos = tecnicos;
-    }
-
-    @ManyToMany(mappedBy = "especialidades")
-    private List<Tecnico> tecnicos;
 
     @Override
     public boolean equals(Object o) {

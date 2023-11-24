@@ -1,11 +1,11 @@
 package org.example;
 
 import org.example.daos.ClienteDAOImp;
-import org.example.daos.IncidenteDAO;
 import org.example.daos.IncidenteDAOImp;
 import org.example.daos.TecnicoDAOImp;
-import org.example.modelos.*;
-import org.example.service.EspecialidadServicio;
+import org.example.modelos.Tecnico;
+import org.example.repositorios.IncidenteRepository;
+import org.example.service.EspecialidadService;
 import org.example.service.IncidenteService;
 import org.example.service.RRHHService;
 import org.example.service.TecnicoService;
@@ -13,18 +13,13 @@ import org.example.service.TecnicoService;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import java.time.LocalDate;
-import java.util.Arrays;
 import java.util.List;
-
-import static org.example.service.EspecialidadServicio.obtenerEspecialidadPorID;
-import static org.example.service.IncidenteService.obtenerTodosLosIncidentes;
 
 
 public class Main {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         // Configuración de la base de datos
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("GestionIncidentesPU");
         EntityManager em = emf.createEntityManager();
@@ -39,11 +34,17 @@ public class Main {
         IncidenteDAOImp incidenteDAO = new IncidenteDAOImp();
         incidenteDAO.setEntityManager(em);
 
+        IncidenteRepository incidenteRepository = new IncidenteRepository();
+
         TecnicoService tecnicoService = new TecnicoService(incidenteDAO);
 
         IncidenteService incidenteService = new IncidenteService();
 
+        EspecialidadService especialidadService = new EspecialidadService();
+
         RRHHService RRHHService = new RRHHService(incidenteService, tecnicoDAO);
+
+        Tecnico tecnico = new Tecnico("Jorge", "Lopez", List.of(especialidadService.obtenerEspecialidadPorID(1L)),"MAIL");
 
         // Crear instancias de entidades
 //        Especialidad especialidad1 = new Especialidad("Redes");
@@ -94,7 +95,9 @@ public class Main {
 //
 //        em.getTransaction().commit();
 
-        RRHHService.generarReporteDiario();
+//        RRHHService.generarReporteDiario();
+
+//        System.out.println(em.find(Especialidad.class, 1L).getTecnicos());
         // Cierre de recursos
         em.close();
         emf.close();

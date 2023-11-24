@@ -1,71 +1,71 @@
 package org.example.repositorios;
 
-import org.example.daos.TecnicoDAO;
+import org.example.daos.ClienteDAO;
 import org.example.factory.DAOFactory;
-import org.example.modelos.Tecnico;
+import org.example.modelos.Cliente;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-public class TecnicoRepository {
+public class ClienteRepository {
     private EntityManagerFactory emf = Persistence.createEntityManagerFactory("GestionIncidentesPU");
-    private TecnicoDAO tecnicoDAO;
+    private ClienteDAO clienteDAO;
 
-    public TecnicoRepository(){
-        this.tecnicoDAO = DAOFactory.getTecnicoDAO();
+    public ClienteRepository(){
+        this.clienteDAO = DAOFactory.getClienteDAO();
     }
 
     private EntityManager obtenerEntityManagerConfigurado() {
 
         EntityManager em = emf.createEntityManager();
 
-        tecnicoDAO.setEntityManager(em);
+        clienteDAO.setEntityManager(em);
 
         return em;
     }
 
-    public void add (Tecnico tecnico) throws Exception {
+    public void add(Cliente cliente) throws Exception {
         EntityManager em = obtenerEntityManagerConfigurado();
 
         em.getTransaction().begin();
 
-        tecnicoDAO.agregarTecnico(tecnico);
+        clienteDAO.agregarCliente(cliente);
 
         em.getTransaction().commit();
         em.close();
 
     }
 
-    public void remove(Tecnico tecnico) throws Exception {
+    public void remove(Cliente cliente) throws Exception {
         EntityManager em = obtenerEntityManagerConfigurado();
 
         em.getTransaction().begin();
 
-        tecnicoDAO.eliminarTecnico(tecnico);
+        clienteDAO.eliminarCliente(cliente);
 
         em.getTransaction().commit();
         em.close();
     }
 
-    public Tecnico get(Long id) throws Exception {
+    public Cliente get(Long id) throws Exception {
         EntityManager em = obtenerEntityManagerConfigurado();
 
         em.getTransaction().begin();
 
-        Tecnico tecnico = tecnicoDAO.buscarTecnico(id);
+        Cliente cliente = clienteDAO.buscarCliente(id);
 
         em.getTransaction().commit();
         em.close();
-        return tecnico;
+        return cliente;
     }
 
-    public void update(Tecnico tecnico) throws Exception {
+    public void update(Cliente cliente) throws Exception {
         EntityManager em = obtenerEntityManagerConfigurado();
 
         em.getTransaction().begin();
 
-        tecnicoDAO.actualizarTecnico(tecnico);
+        clienteDAO.modificarCliente(cliente);
 
         em.getTransaction().commit();
         em.close();

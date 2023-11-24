@@ -12,7 +12,7 @@ public interface ClienteDAO {
 
     public void eliminarCliente(Cliente cliente);
 
-    public Cliente buscarCliente(Integer id);
+    public Cliente buscarCliente(Long id);
 
     public List<Cliente> obtenerTodosLosCliente();
 

@@ -14,7 +14,7 @@ public interface IncidenteDAO {
 
     public void eliminarIncidente(Incidente incidente);
 
-    public Incidente obtenerIncidente(int id);
+    public Incidente obtenerIncidente(Long id);
 
     public void setEntityManager(EntityManager em);
 

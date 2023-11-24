@@ -13,7 +13,7 @@ public interface TecnicoDAO {
 
     public void eliminarTecnico(Tecnico tecnico);
 
-    public Tecnico buscarTecnico(int id);
+    public Tecnico buscarTecnico(Long id);
 
     public List<Tecnico> obtenerTodosLosTecnicos();
 

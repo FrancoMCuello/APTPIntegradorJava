@@ -25,7 +25,7 @@ public class ClienteDAOImp implements ClienteDAO {
     }
 
     @Override
-    public Cliente buscarCliente(Integer id) {
+    public Cliente buscarCliente(Long id) {
         return em.find(Cliente.class, id);
     }
 

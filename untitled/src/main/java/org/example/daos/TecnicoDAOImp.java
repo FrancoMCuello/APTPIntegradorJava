@@ -26,7 +26,7 @@ public class TecnicoDAOImp implements TecnicoDAO{
     }
 
     @Override
-    public Tecnico buscarTecnico(int id) {
+    public Tecnico buscarTecnico(Long id) {
 
         return em.find(Tecnico.class, id);
     }
