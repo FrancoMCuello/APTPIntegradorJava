@@ -5,6 +5,7 @@ import org.example.daos.*;
 public class DAOFactory {
 
     public static ClienteDAO geClienteDAO() {
+
         return new ClienteDAOImp();
     }
     public static TecnicoDAO geTecnicoDAO() {

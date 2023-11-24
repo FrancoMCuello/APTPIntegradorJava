@@ -3,6 +3,7 @@ package org.example.daos;
 import org.example.modelos.Incidente;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import java.util.List;
 
 public class IncidenteDAOImp implements IncidenteDAO {
@@ -31,7 +32,10 @@ public class IncidenteDAOImp implements IncidenteDAO {
     }
     @Override
     public List<Incidente> obtenerTodosLosIncidentes() {
-        return null;
+        Query query = em.createQuery("SELECT i FROM Incidente i", Incidente.class);
+        List<Incidente> ListIncidentes = query.getResultList();
+
+        return ListIncidentes;
     }
 
     @Override

@@ -14,6 +14,7 @@ public class TecnicoRepository {
     private TecnicoDAO tecnicoDAO;
 
     public TecnicoRepository(){
+
         this.tecnicoDAO = DAOFactory.geTecnicoDAO();
     }
 
