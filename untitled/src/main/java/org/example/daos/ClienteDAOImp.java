@@ -31,7 +31,7 @@ public class ClienteDAOImp implements ClienteDAO {
 
     @Override
     public List<Cliente> obtenerTodosLosCliente() {
-        return null;
+        return em.createQuery("SELECT c FROM Cliente c", Cliente.class).getResultList();
     }
 
     @Override

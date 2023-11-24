@@ -16,6 +16,8 @@ public class Cliente {
 
     private String razonSocial;
 
+    private String cuit;
+
     @ManyToMany
     @JoinTable(
             name = "cliente_servicios",
@@ -49,7 +51,7 @@ public class Cliente {
         this.incidentes = incidentes;
     }
 
-    private String cuit;
+
 
     public void setId(Long id) {
         this.id = id;

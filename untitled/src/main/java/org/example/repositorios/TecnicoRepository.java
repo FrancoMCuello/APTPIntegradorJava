@@ -1,4 +1,4 @@
-package org.example.service;
+package org.example.repositorios;
 
 import org.example.daos.TecnicoDAO;
 import org.example.factory.DAOFactory;
@@ -14,7 +14,7 @@ public class TecnicoRepository {
     private TecnicoDAO tecnicoDAO;
 
     public TecnicoRepository(){
-        this.tecnicoDAO = DAOFactory.geTecnicoDAO();
+        this.tecnicoDAO = DAOFactory.getTecnicoDAO();
     }
 
     private EntityManager obtenerEntityManagerConfigurado() {
@@ -85,6 +85,5 @@ public class TecnicoRepository {
         em.getTransaction().commit();
         em.close();
     }
-
 
 }

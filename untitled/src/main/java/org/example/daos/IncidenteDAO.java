@@ -14,9 +14,7 @@ public interface IncidenteDAO {
 
     public void eliminarIncidente(Incidente incidente);
 
-    public Incidente buscarIncidente(int id);
-
-    public List<Incidente> obtenerTodosLosIncidentes();
+    public Incidente obtenerIncidente(int id);
 
     public void setEntityManager(EntityManager em);
 

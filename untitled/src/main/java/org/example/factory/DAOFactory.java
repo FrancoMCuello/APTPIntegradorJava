@@ -4,14 +4,31 @@ import org.example.daos.*;
 
 public class DAOFactory {
 
-    public static ClienteDAO geClienteDAO() {
-        return new ClienteDAOImp();
+    public static ClienteDAO getClienteDAO() {
+        try {
+            return new ClienteDAOImp();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
-    public static TecnicoDAO geTecnicoDAO() {
-        return new TecnicoDAOImp();
+
+    public static TecnicoDAO getTecnicoDAO() {
+        try {
+            return new TecnicoDAOImp();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
-    public static IncidenteDAO geIncidenteDAO() {
-        return new IncidenteDAOImp();
+
+    public static IncidenteDAO getIncidenteDAO() {
+        try {
+            return new IncidenteDAOImp();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
 }

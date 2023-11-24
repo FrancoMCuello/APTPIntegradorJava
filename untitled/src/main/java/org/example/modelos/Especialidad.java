@@ -27,10 +27,10 @@ public class Especialidad {
         this.nombre = nombre;
     }
 
-    public void setTecnicos(List<Incidente.Tecnico> tecnicos) {
+    public void setTecnicos(List<Tecnico> tecnicos) {
         this.tecnicos = tecnicos;
     }
 
     @ManyToMany(mappedBy = "especialidades")
-    private List<Incidente.Tecnico> tecnicos;
+    private List<Tecnico> tecnicos;
 }

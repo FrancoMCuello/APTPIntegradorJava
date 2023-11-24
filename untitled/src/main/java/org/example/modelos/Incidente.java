@@ -1,8 +1,10 @@
 package org.example.modelos;
 
 import lombok.Getter;
+import net.bytebuddy.asm.Advice;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -20,7 +22,7 @@ public class Incidente {
 
     private String descripcion;
 
-    private Date tiempoResolucion;
+    private LocalDate tiempoResolucion;
     public enum Estado {
         PENDIENTE,
         RESUELTO
@@ -31,6 +33,13 @@ public class Incidente {
 
     private int colchonHoras;
 
+    private LocalDate fechaInicio;
+
+    private LocalDate fechaResolucion;
+
+    public LocalDate getFechaResolucion() {
+        return fechaResolucion;
+    }
     @ManyToOne
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
@@ -39,10 +48,10 @@ public class Incidente {
     @JoinColumn(name = "tecnico_id")
     private Tecnico tecnicoAsignado;
 
-    public Incidente( List<TipoProblema> tipoProblema, String descripcion, org.example.modelos.Incidente.Estado estadoIncidente, Cliente cliente, Tecnico tecnicoAsignado) {
+    public Incidente( List<TipoProblema> tipoProblema, String descripcion, org.example.modelos.Incidente.Estado estadoIncidente, Cliente cliente, Tecnico tecnicoAsignado, LocalDate fechaInicio) {
         this.tipoProblema = tipoProblema;
         this.descripcion = descripcion;
-        //this.tiempoResolucion = tiempoResolucion;
+        this.fechaInicio = fechaInicio;
         this.estadoIncidente = estadoIncidente;
         this.cliente = cliente;
         this.tecnicoAsignado = tecnicoAsignado;
@@ -64,22 +73,21 @@ public class Incidente {
         this.tipoProblema = tipoProblema;
     }
 
-    public Date getTiempoResolucion() {
+    public LocalDate getTiempoResolucion() {
         return tiempoResolucion;
     }
 
-    public void setTiempoResolucion(Date tiempoResolucion) {
+    public void setTiempoResolucion(LocalDate tiempoResolucion) {
         this.tiempoResolucion = tiempoResolucion;
     }
 
-    public org.example.modelos.Incidente.Estado getEstadoIncidente() {
+    public Estado getEstadoIncidente() {
         return estadoIncidente;
     }
 
     public void setEstadoIncidente(org.example.modelos.Incidente.Estado estadoIncidente) {
         this.estadoIncidente = estadoIncidente;
     }
-
 
 
     public Cliente getCliente() {
@@ -99,5 +107,7 @@ public class Incidente {
         this.tecnicoAsignado = tecnicoAsignado;
     }
 
-
+    public LocalDate getFechaInicio() {
+        return fechaInicio;
+    }
 }

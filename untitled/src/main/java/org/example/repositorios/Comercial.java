@@ -1,4 +1,6 @@
-package org.example.modelos;
+package org.example.repositorios;
+
+import org.example.modelos.Cliente;
 
 public class Comercial {
     public void incorporarClienteNuevo(Cliente cliente) {

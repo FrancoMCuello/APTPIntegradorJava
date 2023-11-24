@@ -3,6 +3,7 @@ package org.example.daos;
 import org.example.modelos.Incidente;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import java.util.List;
 
 public class IncidenteDAOImp implements IncidenteDAO {
@@ -25,14 +26,11 @@ public class IncidenteDAOImp implements IncidenteDAO {
     }
 
     @Override
-    public Incidente buscarIncidente(int id) {
+    public Incidente obtenerIncidente(int id) {
       return em.find(Incidente.class, id);
+// Si find devuelve null, podrías lanzar una excepción o manejar la situación según tus requisitos.
+    }
 
-    }
-    @Override
-    public List<Incidente> obtenerTodosLosIncidentes() {
-        return null;
-    }
 
     @Override
     public void setEntityManager(EntityManager em) {
