@@ -9,7 +9,6 @@ import java.util.List;
 @Entity
 @Table
 public class Servicio {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

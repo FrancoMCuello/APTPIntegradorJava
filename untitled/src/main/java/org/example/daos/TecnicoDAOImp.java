@@ -34,7 +34,7 @@ public class TecnicoDAOImp implements TecnicoDAO{
     @Override
     public List<Tecnico> obtenerTodosLosTecnicos() {
 
-        return null;
+        return em.createQuery("SELECT t FROM Tecnico t", Tecnico.class).getResultList();
     }
 
     @Override

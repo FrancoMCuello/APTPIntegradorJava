@@ -16,6 +16,10 @@ public class TipoProblema {
 
     private String tipoProblema;
 
+    public TipoProblema(String tipoProblema) {
+        this.tipoProblema = tipoProblema;
+    }
+
     public void setIncidentes(List<Incidente> incidentes) {
         this.incidentes = incidentes;
     }

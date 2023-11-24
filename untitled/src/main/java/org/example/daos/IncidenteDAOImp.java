@@ -1,6 +1,7 @@
 package org.example.daos;
 
 import org.example.modelos.Incidente;
+import org.example.modelos.Tecnico;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
@@ -26,20 +27,21 @@ public class IncidenteDAOImp implements IncidenteDAO {
     }
 
     @Override
-    public Incidente buscarIncidente(int id) {
-      return em.find(Incidente.class, id);
-
+    public Incidente obtenerIncidente(int id) {
+        return em.find(Incidente.class, id);
+// Si find devuelve null, podrías lanzar una excepción o manejar la situación según tus requisitos.
     }
+
     @Override
     public List<Incidente> obtenerTodosLosIncidentes() {
-        Query query = em.createQuery("SELECT i FROM Incidente i", Incidente.class);
-        List<Incidente> ListIncidentes = query.getResultList();
 
-        return ListIncidentes;
+        return em.createQuery("SELECT t FROM Tecnico t", Incidente.class).getResultList();
     }
+
 
     @Override
     public void setEntityManager(EntityManager em) {
         this.em = em;
     }
+
 }

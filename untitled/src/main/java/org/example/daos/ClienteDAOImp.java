@@ -6,16 +6,15 @@ import javax.persistence.EntityManager;
 import java.util.List;
 
 public class ClienteDAOImp implements ClienteDAO {
-
     private EntityManager em;
     @Override
     public void agregarCliente(Cliente cliente) {
-         em.persist(cliente);
+        em.persist(cliente);
     }
 
     @Override
     public void modificarCliente(Cliente cliente) {
-           em.merge(cliente);
+        em.merge(cliente);
     }
 
     @Override
@@ -31,7 +30,7 @@ public class ClienteDAOImp implements ClienteDAO {
 
     @Override
     public List<Cliente> obtenerTodosLosCliente() {
-        return null;
+        return em.createQuery("SELECT c FROM Cliente c", Cliente.class).getResultList();
     }
 
     @Override

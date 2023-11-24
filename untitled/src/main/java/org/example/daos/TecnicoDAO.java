@@ -18,5 +18,4 @@ public interface TecnicoDAO {
     public List<Tecnico> obtenerTodosLosTecnicos();
 
     public void setEntityManager(EntityManager em);
-
 }
