@@ -11,6 +11,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import static org.example.service.IncidenteService.obtenerTodosLosIncidentes;
+import static org.example.service.EspecialidadServicio.obtenerEspecialidadPorID;
 
 public class TecnicoService {
 
@@ -37,14 +38,15 @@ public class TecnicoService {
                     .orElse(null);
         }
 
-    public Tecnico getTecnicoConMasIncidentesResueltosEnEspecialidadYUltimosNDias(Especialidad especialidad, int nDias) {
+    public Tecnico getTecnicoConMasIncidentesResueltosEnEspecialidadYUltimosNDias(Long idespecialidad, int nDias) {
+            Especialidad especialidad = obtenerEspecialidadPorID(idespecialidad);
         List<Incidente> incidentesResueltosEnUltimosNDias = obtenerTodosLosIncidentes().stream()
                 .filter(incidente -> incidente.getEstadoIncidente() == Incidente.Estado.RESUELTO &&
                         incidente.getFechaResolucion().isAfter(LocalDate.now().minusDays(nDias)) &&
-                        incidente.getTecnicoAsignado().getEspecialidades().contains(especialidad))
+                        incidente.getTecnicoAsignado().getEspecialidades().stream()
+                                .anyMatch(e -> e.equals(especialidad)))
                 .toList();
 
-        // DUDOSO
         Map<Tecnico, Long> conteoPorTecnico = incidentesResueltosEnUltimosNDias.stream()
                 .collect(Collectors.groupingBy(Incidente::getTecnicoAsignado, Collectors.counting()));
 
@@ -57,13 +59,13 @@ public class TecnicoService {
     public Tecnico getTecnicoConResolucionMasRapida() {
         List<Incidente> incidentesResueltos = obtenerTodosLosIncidentes().stream()
                 .filter(incidente -> incidente.getEstadoIncidente() == Incidente.Estado.RESUELTO &&
-                        incidente.getTiempoResolucion() != null)
+                        incidente.getFechaInicio() != null && incidente.getFechaResolucion() != null)
                 .toList();
 
         Map<Tecnico, Double> tiempoPromedioPorTecnico = incidentesResueltos.stream()
                 .collect(Collectors.groupingBy(Incidente::getTecnicoAsignado,
                         Collectors.averagingDouble(incidente ->
-                                ChronoUnit.MILLIS.between(incidente.getFechaInicio(), incidente.getFechaResolucion()))
+                                ChronoUnit.DAYS.between(incidente.getFechaInicio(), incidente.getFechaResolucion()))
                 ));
 
         Optional<Map.Entry<Tecnico, Double>> tecnicoConResolucionMasRapida = tiempoPromedioPorTecnico.entrySet().stream()

@@ -4,6 +4,7 @@ import lombok.Getter;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Objects;
 
 @Getter
 @Entity
@@ -12,6 +13,9 @@ public class Especialidad {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    public Especialidad() {
+    }
 
     private String nombre;
 
@@ -33,4 +37,17 @@ public class Especialidad {
 
     @ManyToMany(mappedBy = "especialidades")
     private List<Tecnico> tecnicos;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Especialidad that = (Especialidad) o;
+        return Objects.equals(nombre, that.nombre);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nombre);
+    }
 }

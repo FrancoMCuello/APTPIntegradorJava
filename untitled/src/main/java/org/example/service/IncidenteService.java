@@ -18,14 +18,14 @@ public class IncidenteService {
         try {
             em.getTransaction().begin();
 
-            Query query = em.createQuery("SELECT i FROM Incidente i LEFT JOIN FETCH i.tecnico", Incidente.class);
+            Query query = em.createQuery("SELECT i FROM Incidente i", Incidente.class);
             List<Incidente> incidentes = query.getResultList();
 
             em.getTransaction().commit();
 
             return incidentes;
         } finally {
-            em.close();
+
         }
     }
 }

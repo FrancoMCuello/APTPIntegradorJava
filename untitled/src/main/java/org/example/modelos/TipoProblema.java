@@ -24,6 +24,9 @@ public class TipoProblema {
         this.incidentes = incidentes;
     }
 
+    public TipoProblema() {
+    }
+
     @Getter
     @ManyToMany
     @JoinTable(

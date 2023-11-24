@@ -14,6 +14,9 @@ public class Servicio {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    public Servicio() {
+    }
+
     private String nombre;
 
     private String descripcion;

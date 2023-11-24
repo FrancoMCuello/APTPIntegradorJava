@@ -41,6 +41,9 @@ public class Tecnico {
     @OneToMany(mappedBy = "tecnicoAsignado", cascade = CascadeType.ALL)
     private List<Incidente> incidentesAsignados;
 
+    public Tecnico() {
+    }
+
     public Long getId() {
         return id;
     }

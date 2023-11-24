@@ -16,6 +16,9 @@ public class Cliente {
 
     private String razonSocial;
 
+    public Cliente() {
+    }
+
     private String cuit;
 
     @ManyToMany
