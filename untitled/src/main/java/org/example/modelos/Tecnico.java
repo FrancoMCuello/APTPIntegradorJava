@@ -44,6 +44,14 @@ public class Tecnico {
     public Tecnico() {
     }
 
+    public Tecnico(String nombre, String apellido, String contacto, List<Especialidad> especialidades, List<Incidente> incidentesAsignados) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.contacto = contacto;
+        this.especialidades = especialidades;
+        this.incidentesAsignados = incidentesAsignados;
+    }
+
     public Long getId() {
         return id;
     }

@@ -1,10 +1,13 @@
 package org.example;
 
 import org.example.daos.ClienteDAOImp;
+import org.example.daos.IncidenteDAO;
 import org.example.daos.IncidenteDAOImp;
 import org.example.daos.TecnicoDAOImp;
 import org.example.modelos.*;
 import org.example.service.EspecialidadServicio;
+import org.example.service.IncidenteService;
+import org.example.service.RRHHService;
 import org.example.service.TecnicoService;
 
 import javax.persistence.EntityManager;
@@ -38,18 +41,22 @@ public class Main {
 
         TecnicoService tecnicoService = new TecnicoService(incidenteDAO);
 
-//        // Crear instancias de entidades
+        IncidenteService incidenteService = new IncidenteService();
+
+        RRHHService RRHHService = new RRHHService(incidenteService, tecnicoDAO);
+
+        // Crear instancias de entidades
 //        Especialidad especialidad1 = new Especialidad("Redes");
 //        Especialidad especialidad2 = new Especialidad("Software");
 //
-//        Tecnico tecnico1 = new Tecnico("Juan", "Perez", Arrays.asList(especialidad1), "123-456");
-//        Tecnico tecnico2 = new Tecnico("Maria", "Lopez", Arrays.asList(especialidad2), "789-012");
-//
-//        Cliente cliente1 = new Cliente("Empresa A", "123456", Arrays.asList());
-//        Cliente cliente2 = new Cliente("Empresa B", "789012", Arrays.asList());
+//        Tecnico tecnico1 = new Tecnico("Juan", "Perez", List.of(especialidad1), "123-456");
+//        Tecnico tecnico2 = new Tecnico("Maria", "Lopez", List.of(especialidad2), "789-012");
 //
 //        Servicio servicio1 = new Servicio("Windows");
 //        Servicio servicio2 = new Servicio("Linux");
+//
+//        Cliente cliente1 = new Cliente("Empresa A", "123456", List.of(servicio1, servicio2));
+//        Cliente cliente2 = new Cliente("Empresa B", "789012", List.of(servicio2));
 //
 //        TipoProblema tipoProblema1 = new TipoProblema("Red");
 //        TipoProblema tipoProblema2 = new TipoProblema("Software");
@@ -58,9 +65,10 @@ public class Main {
 //        LocalDate fechaInicio2 = LocalDate.of(2023, 11, 22);
 //        LocalDate fechaInicio3 = LocalDate.of(2023, 11, 17);
 //
-//        Incidente incidente1 = new Incidente(Arrays.asList(tipoProblema1), "Problema de red", Incidente.Estado.RESUELTO, fechaInicio1, LocalDate.now(), cliente1, tecnico1);
-//        Incidente incidente2 = new Incidente(Arrays.asList(tipoProblema2), "Problema de software", Incidente.Estado.RESUELTO, fechaInicio2, LocalDate.now(), cliente2, tecnico2);
-//        Incidente incidente3 = new Incidente(Arrays.asList(tipoProblema2), "Problema de software", Incidente.Estado.RESUELTO, fechaInicio3, LocalDate.now(), cliente1, tecnico2);
+//        Incidente incidente1 = new Incidente(List.of(tipoProblema1), "Problema de red", Incidente.Estado.RESUELTO, fechaInicio1, LocalDate.now(), cliente1, tecnico1);
+//        Incidente incidente2 = new Incidente(List.of(tipoProblema2), "Problema de software", Incidente.Estado.RESUELTO, fechaInicio2, LocalDate.now(), cliente2, tecnico2);
+//        Incidente incidente3 = new Incidente(List.of(tipoProblema2), "Problema de software", Incidente.Estado.RESUELTO, fechaInicio3, LocalDate.now(), cliente1, tecnico2);
+//
 //
 //        // Persistir las entidades
 //        em.getTransaction().begin();
@@ -80,22 +88,28 @@ public class Main {
 //        em.persist(incidente1);
 //        em.persist(incidente2);
 //        em.persist(incidente3);
-
+//
+//        em.persist(tipoProblema1);
+//        em.persist(tipoProblema2);
+//
 //        em.getTransaction().commit();
 
+        RRHHService.generarReporteDiario();
         // Cierre de recursos
         em.close();
         emf.close();
 
-        Tecnico tecnicoServiceTecnicoConMasIncidentesResueltosEnUltimosNDias = tecnicoService.getTecnicoConMasIncidentesResueltosEnUltimosNDias(5);
+//        Tecnico tecnicoServiceTecnicoConMasIncidentesResueltosEnUltimosNDias = tecnicoService.getTecnicoConMasIncidentesResueltosEnUltimosNDias(5);
+//
+//        Tecnico tecnicoConMasIncidentesPorEspecialidad = tecnicoService.getTecnicoConMasIncidentesResueltosEnEspecialidadYUltimosNDias(1L, 10);
+//
+//        Tecnico tecnicoConResolucionMasRapida = tecnicoService.getTecnicoConResolucionMasRapida();
+//
+//        System.out.println(tecnicoConMasIncidentesPorEspecialidad.getNombre());
+//        System.out.println(tecnicoServiceTecnicoConMasIncidentesResueltosEnUltimosNDias.getNombre());
+//        System.out.println(tecnicoConResolucionMasRapida.getNombre());
 
-        Tecnico tecnicoConMasIncidentesPorEspecialidad = tecnicoService.getTecnicoConMasIncidentesResueltosEnEspecialidadYUltimosNDias(1L, 10);
 
-        Tecnico tecnicoConResolucionMasRapida = tecnicoService.getTecnicoConResolucionMasRapida();
-
-        System.out.println(tecnicoConMasIncidentesPorEspecialidad.getNombre());
-        System.out.println(tecnicoServiceTecnicoConMasIncidentesResueltosEnUltimosNDias.getNombre());
-        System.out.println(tecnicoConResolucionMasRapida.getNombre());
 
     }
 

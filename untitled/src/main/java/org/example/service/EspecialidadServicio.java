@@ -14,7 +14,6 @@ public class EspecialidadServicio {
 
     public static Especialidad obtenerEspecialidadPorID(Long idEspecialidad) {
 
-
             try {
                 em.getTransaction().begin();
                 return em.find(Especialidad.class, idEspecialidad);

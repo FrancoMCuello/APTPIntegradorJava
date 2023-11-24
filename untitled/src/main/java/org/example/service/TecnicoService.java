@@ -20,6 +20,8 @@ public class TecnicoService {
         public TecnicoService(IncidenteDAOImp incidenteDAO) {
             this.incidenteDAO = incidenteDAO;
         }
+
+
         public Tecnico getTecnicoConMasIncidentesResueltosEnUltimosNDias(int nDias) {
 
             List<Incidente> incidentes = obtenerTodosLosIncidentes();

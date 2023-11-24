@@ -28,11 +28,7 @@ public class TipoProblema {
     }
 
     @Getter
-    @ManyToMany
-    @JoinTable(
-            name = "incidente_tipoProblema",
-            joinColumns = @JoinColumn(name = "incidente_id"),
-            inverseJoinColumns = @JoinColumn(name = "tipoProblema_id"))
+    @ManyToMany(mappedBy = "tipoProblema")
     private List<Incidente> incidentes;
 
     public TipoProblema(String tipoProblema, Date tiempoEstimado, Date tiempoMaximo) {

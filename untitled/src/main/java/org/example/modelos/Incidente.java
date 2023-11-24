@@ -18,7 +18,11 @@ public class Incidente {
     public Incidente() {
     }
 
-    @ManyToMany(mappedBy = "incidentes")
+    @ManyToMany
+    @JoinTable(
+            name = "incidente_tipoProblema",
+            joinColumns = @JoinColumn(name = "incidente_id"),
+            inverseJoinColumns = @JoinColumn(name = "tipoProblema_id"))
     private List<TipoProblema> tipoProblema;
 
     private String descripcion;
@@ -65,10 +69,10 @@ public class Incidente {
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
-    @Getter
     @ManyToOne
     @JoinColumn(name = "tecnico_id")
     private Tecnico tecnicoAsignado;
+
 
     public Incidente( List<TipoProblema> tipoProblema, String descripcion, org.example.modelos.Incidente.Estado estadoIncidente, Cliente cliente, Tecnico tecnicoAsignado, LocalDate fechaInicio) {
         this.tipoProblema = tipoProblema;
