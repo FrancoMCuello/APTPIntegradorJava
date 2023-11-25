@@ -129,9 +129,9 @@ public class Main {
 
         Tecnico tecnicoConResolucionMasRapida = tecnicoService.getTecnicoConResolucionMasRapida();
 
-        System.out.println(tecnicoConMasIncidentesPorEspecialidad.getNombre());
-        System.out.println(tecnicoServiceTecnicoConMasIncidentesResueltosEnUltimosNDias.getNombre());
-        System.out.println(tecnicoConResolucionMasRapida.getNombre());
+        System.out.println("tecnico con mas incidentes por especialidad: " + tecnicoConMasIncidentesPorEspecialidad.getNombre());
+        System.out.println("tecnico con mas incidentes resueltos los ultimos días: " + tecnicoServiceTecnicoConMasIncidentesResueltosEnUltimosNDias.getNombre());
+        System.out.println("tecnico con resolucion mas rapida: " + tecnicoConResolucionMasRapida.getNombre());
 
     }
 
