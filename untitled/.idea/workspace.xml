@@ -4,9 +4,6 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="160cfe1b-5aba-482f-9a6f-0b79727ef041" name="Changes" comment="" />
-=======
     <list default="true" id="160cfe1b-5aba-482f-9a6f-0b79727ef041" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../.idea/uiDesigner.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/org/example/repositorios/ClienteRepository.java" afterDir="false" />
@@ -37,7 +34,6 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/TecnicoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/TecnicoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
->>>>>>> develop
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,8 +59,8 @@
     <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 2
-}</component>
+    &quot;associatedIndex&quot;: 2
+    }</component>
   <component name="ProjectId" id="2YLokipdtg8rtWhyvjsofD4c4ml" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
