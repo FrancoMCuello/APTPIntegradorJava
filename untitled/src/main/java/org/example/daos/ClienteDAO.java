@@ -10,9 +10,9 @@ public interface ClienteDAO {
 
     public void modificarCliente(Cliente cliente);
 
-    public void eliminarCliente(Cliente cliente);
+    public void eliminarCliente(Long id);
 
-    public Cliente buscarCliente(Integer id);
+    public Cliente buscarCliente(Long id);
 
     public List<Cliente> obtenerTodosLosCliente();
 

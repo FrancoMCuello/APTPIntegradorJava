@@ -3,6 +3,7 @@ package org.example.factory;
 import org.example.daos.*;
 
 public class DAOFactory {
+
     public static ClienteDAO getClienteDAO() {
         try {
             return new ClienteDAOImp();

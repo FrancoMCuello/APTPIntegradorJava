@@ -1,7 +1,6 @@
 package org.example.daos;
 
 import org.example.modelos.Incidente;
-import org.example.modelos.Tecnico;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
@@ -17,25 +16,29 @@ public class IncidenteDAOImp implements IncidenteDAO {
 
     @Override
     public void modificarIncidente(Incidente incidente) {
+
         em.merge(incidente);
     }
 
     @Override
-    public void eliminarIncidente(Incidente incidente) {
-        Incidente i = em.merge(incidente);
-        em.remove(i);
+    public void eliminarIncidente(Long id) {
+
+        Incidente incidente = em.find(Incidente.class, id);
+
+        // Verificar si el incidente existe antes de intentar eliminarlo
+        if (incidente != null) {
+            em.remove(incidente);
+        } else {
+            // Manejar la situación en la que el incidente no fue encontrado
+            System.out.println("Incidente con ID " + id + " no encontrado.");
+        }
+
     }
 
     @Override
-    public Incidente obtenerIncidente(int id) {
-        return em.find(Incidente.class, id);
+    public Incidente obtenerIncidente(Long id) {
+      return em.find(Incidente.class, id);
 // Si find devuelve null, podrías lanzar una excepción o manejar la situación según tus requisitos.
-    }
-
-    @Override
-    public List<Incidente> obtenerTodosLosIncidentes() {
-
-        return em.createQuery("SELECT t FROM Tecnico t", Incidente.class).getResultList();
     }
 
 
@@ -43,5 +46,4 @@ public class IncidenteDAOImp implements IncidenteDAO {
     public void setEntityManager(EntityManager em) {
         this.em = em;
     }
-
 }

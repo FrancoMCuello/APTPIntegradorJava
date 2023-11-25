@@ -1,20 +1,23 @@
 package org.example.modelos;
 
-import lombok.Getter;
+import lombok.*;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
 
 @Getter
+@Setter
 @Entity
 @Table
 public class Cliente {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String razonSocial;
+
+    private String cuit;
 
     @ManyToMany
     @JoinTable(
@@ -23,13 +26,10 @@ public class Cliente {
             inverseJoinColumns = @JoinColumn(name = "servicio_id"))
     private List<Servicio> servicios;
 
-    public List<Servicio> getServicio() {
-        return servicios;
-    }
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
+    private List<Incidente> incidentes;
 
-    public void setServicio(List<Servicio> servicios) {
-        this.servicios = servicios;
-    }
+    public Cliente(){}
 
     public Cliente(String razonSocial, String cuit, List<Servicio> servicios) {
         this.razonSocial = razonSocial;
@@ -37,37 +37,44 @@ public class Cliente {
         this.cuit = cuit;
     }
 
-    public Cliente(String razonSocial, String cuit) {
-        this.razonSocial = razonSocial;
-        this.cuit = cuit;
+    public Long getId() {
+        return id;
     }
-
-    public Cliente(Long id, String razonSocial, String cuit, List<Incidente> incidentes) {
-        this.id = id;
-        this.razonSocial = razonSocial;
-        this.cuit = cuit;
-        this.incidentes = incidentes;
-    }
-
-    private String cuit;
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getRazonSocial() {
+        return razonSocial;
     }
 
     public void setRazonSocial(String razonSocial) {
         this.razonSocial = razonSocial;
     }
 
+    public String getCuit() {
+        return cuit;
+    }
+
     public void setCuit(String cuit) {
         this.cuit = cuit;
+    }
+
+    public List<Servicio> getServicios() {
+        return servicios;
+    }
+
+    public void setServicios(List<Servicio> servicios) {
+        this.servicios = servicios;
+    }
+
+    public List<Incidente> getIncidentes() {
+        return incidentes;
     }
 
     public void setIncidentes(List<Incidente> incidentes) {
         this.incidentes = incidentes;
     }
-
-    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
-    private List<Incidente> incidentes;
 }
 

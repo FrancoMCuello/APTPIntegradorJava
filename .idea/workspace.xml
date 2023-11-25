@@ -4,11 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ab175b3-4e89-46b6-a774-61fabd237afb" name="Changes" comment="?">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_11_2023_13_11__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_11_2023_13_11__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_11_2023_13_13__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_11_2023_13_13__Changes_.xml" afterDir="false" />
+    <list default="true" id="6ab175b3-4e89-46b6-a774-61fabd237afb" name="Changes" comment="x">
+      <change afterPath="$PROJECT_DIR$/untitled/src/main/java/org/example/service/IncidenteService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/src/main/java/org/example/service/TecnicoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/org/example/daos/ClienteDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/src/main/java/org/example/daos/ClienteDAOImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/org/example/daos/IncidenteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/src/main/java/org/example/daos/IncidenteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/org/example/daos/IncidenteDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/src/main/java/org/example/daos/IncidenteDAOImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/org/example/daos/TecnicoDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/src/main/java/org/example/daos/TecnicoDAOImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/org/example/factory/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/src/main/java/org/example/factory/DAOFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/org/example/modelos/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/src/main/java/org/example/modelos/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/org/example/modelos/Comercial.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/src/main/java/org/example/repositorios/Comercial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/org/example/modelos/Especialidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/src/main/java/org/example/modelos/Especialidad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/org/example/modelos/Incidente.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/src/main/java/org/example/modelos/Incidente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/org/example/modelos/TipoProblema.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/src/main/java/org/example/modelos/TipoProblema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/org/example/service/TecnicoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/src/main/java/org/example/repositorios/TecnicoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,18 +57,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Franco/Desktop/Descarga/TPIntegrador/APTPIntegradorJava/untitled",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.runner"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;x&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.rainbow.brackets.color&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="untitled" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="APTPIntegradorJAVA" />
       <method v="2">
@@ -69,6 +94,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -103,7 +133,23 @@
       <option name="project" value="LOCAL" />
       <updated>1700324360442</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Arregla problemas de mapeo de entidades">
+      <option name="closed" value="true" />
+      <created>1700741943487</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1700741943487</updated>
+    </task>
+    <task id="LOCAL-00005" summary="x">
+      <option name="closed" value="true" />
+      <created>1700780413746</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1700780413746</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -121,6 +167,8 @@
     <MESSAGE value="Agrego las dependencias" />
     <MESSAGE value="Clases" />
     <MESSAGE value="?" />
-    <option name="LAST_COMMIT_MESSAGE" value="?" />
+    <MESSAGE value="Arregla problemas de mapeo de entidades" />
+    <MESSAGE value="x" />
+    <option name="LAST_COMMIT_MESSAGE" value="x" />
   </component>
 </project>

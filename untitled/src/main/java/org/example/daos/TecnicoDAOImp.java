@@ -1,5 +1,6 @@
 package org.example.daos;
 
+import org.example.modelos.Incidente;
 import org.example.modelos.Tecnico;
 
 import javax.persistence.EntityManager;
@@ -19,14 +20,21 @@ public class TecnicoDAOImp implements TecnicoDAO{
     }
 
     @Override
-    public void eliminarTecnico(Tecnico tecnico) {
-        Tecnico t = em.merge(tecnico);
-        em.remove(t);
+    public void eliminarTecnico(Long id) {
+        Tecnico tecnico = em.find(Tecnico.class, id);
+
+        // Verificar si el incidente existe antes de intentar eliminarlo
+        if (tecnico != null) {
+            em.remove(tecnico);
+        } else {
+            // Manejar la situación en la que el incidente no fue encontrado
+            System.out.println("Tecnico con ID " + id + " no encontrado.");
+        }
 
     }
 
     @Override
-    public Tecnico buscarTecnico(int id) {
+    public Tecnico buscarTecnico(Long id) {
 
         return em.find(Tecnico.class, id);
     }

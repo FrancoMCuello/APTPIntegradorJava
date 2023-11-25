@@ -1,14 +1,12 @@
 package org.example.modelos;
 
-import lombok.Getter;
-import org.example.modelos.Especialidad;
-import org.example.modelos.Incidente;
+import lombok.*;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
 
 @Getter
+@Setter
 @Entity
 @Table
 public class Tecnico {
@@ -21,14 +19,6 @@ public class Tecnico {
 
     private String apellido;
 
-    public String getContacto() {
-        return contacto;
-    }
-
-    public void setContacto(String contacto) {
-        this.contacto = contacto;
-    }
-
     private String contacto;
 
     @ManyToMany
@@ -40,6 +30,24 @@ public class Tecnico {
 
     @OneToMany(mappedBy = "tecnicoAsignado", cascade = CascadeType.ALL)
     private List<Incidente> incidentesAsignados;
+
+    public Tecnico() {
+    }
+
+    public Tecnico(String nombre, String apellido, List<Especialidad> especialidades, String contacto) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.especialidades = especialidades;
+        this.contacto = contacto;
+    }
+
+    public Tecnico(String nombre, String apellido, String contacto, List<Especialidad> especialidades, List<Incidente> incidentesAsignados) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.contacto = contacto;
+        this.especialidades = especialidades;
+        this.incidentesAsignados = incidentesAsignados;
+    }
 
     public Long getId() {
         return id;
@@ -65,6 +73,14 @@ public class Tecnico {
         this.apellido = apellido;
     }
 
+    public String getContacto() {
+        return contacto;
+    }
+
+    public void setContacto(String contacto) {
+        this.contacto = contacto;
+    }
+
     public List<Especialidad> getEspecialidades() {
         return especialidades;
     }
@@ -79,12 +95,5 @@ public class Tecnico {
 
     public void setIncidentesAsignados(List<Incidente> incidentesAsignados) {
         this.incidentesAsignados = incidentesAsignados;
-    }
-
-    public Tecnico( String nombre, String apellido, List<Especialidad> especialidades, String contacto) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.especialidades = especialidades;
-        this.contacto = contacto;
     }
 }

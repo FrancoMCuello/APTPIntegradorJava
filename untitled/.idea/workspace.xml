@@ -5,21 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="160cfe1b-5aba-482f-9a6f-0b79727ef041" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/repositorios/ClienteRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/repositorios/IncidenteRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/service/EspecialidadService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/service/RRHHService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/daos/ClienteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/daos/ClienteDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/daos/ClienteDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/daos/ClienteDAOImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/daos/IncidenteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/daos/IncidenteDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/daos/IncidenteDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/daos/IncidenteDAOImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/daos/TecnicoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/daos/TecnicoDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/daos/TecnicoDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/daos/TecnicoDAOImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/factory/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/factory/DAOFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/modelos/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/modelos/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/modelos/Comercial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repositorios/Comercial.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/modelos/Especialidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/modelos/Especialidad.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/modelos/Incidente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/modelos/Incidente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/modelos/Servicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/modelos/Servicio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/modelos/Tecnico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/modelos/Tecnico.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/modelos/TipoProblema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/modelos/TipoProblema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repositorios/RRHH.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/IncidenteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/IncidenteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/TecnicoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/TecnicoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/TecnicoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repositorios/TecnicoRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/TecnicoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/TecnicoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +68,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "git-widget-placeholder": "develop",
+    "git-widget-placeholder": "Merging develop",
     "last_opened_file_path": "C:/Users/Franco/Desktop/repositorio/repositorio"
   }
 }]]></component>

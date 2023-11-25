@@ -1,7 +1,6 @@
 package org.example.daos;
 
 import org.example.modelos.Incidente;
-import org.example.modelos.Tecnico;
 
 
 import javax.persistence.EntityManager;
@@ -13,11 +12,10 @@ public interface IncidenteDAO {
 
     public void modificarIncidente(Incidente incidente);
 
-    public void eliminarIncidente(Incidente incidente);
+    public void eliminarIncidente(Long id);
 
-    public Incidente obtenerIncidente(int id);
-
-    public List<Incidente> obtenerTodosLosIncidentes();
+    public Incidente obtenerIncidente(Long id);
 
     public void setEntityManager(EntityManager em);
+
 }
